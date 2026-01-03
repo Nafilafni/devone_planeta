@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Catatan | Planeta</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- CONTENT -->
+  <main class="content">
+    <a href="dashboard.html" class="back-btn">← Kembali</a>
+    <h2>Catatan Perkuliahan</h2>
+
+    <!-- FORM CATATAN -->
+    <div class="card catatan-form">
+      <h3>Tambah Catatan</h3>
+
+      <select id="matkulCatatan">
+        <option value="">Pilih Mata Kuliah</option>
+        <option>Keamanan Web</option>
+        <option>DevOpsSec</option>
+        <option>Rekayasa Perangkat Lunak</option>
+        <option>Pemrograman Berorientasi Objek</option>
+        <option>Bahasa Inggris</option>
+        <option>Komputasi Paralel & Terdistribusi</option>
+        <option>Incident Response</option>
+        <option>Kewirausahaan</option>
+      </select>
+
+      <input type="text" id="judulCatatan" placeholder="Judul catatan">
+
+      <textarea id="deskripsiCatatan"
+        placeholder="Isi / ringkasan catatan"></textarea>
+
+      <input type="file" id="fileCatatan" accept="image/*,.pdf">
+
+      <button class="btn success" onclick="simpanCatatan()">
+        Simpan Catatan
+      </button>
+    </div>
+
+    <!-- LIST CATATAN -->
+    <div id="daftar-catatan"></div>
+
+  </main>
+</div>
+
+<script src="js/catatan.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kelola Jadwal | Planeta</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- FullCalendar GLOBAL -->
+  <link rel="stylesheet"
+    href="https://unpkg.com/fullcalendar@6.1.8/index.global.min.css">
+
+  <script
+    src="https://unpkg.com/fullcalendar@6.1.8/index.global.min.js">
+  </script>
+</head>
+
+<body>
+
+<main class="content">
+
+  <a href="dashboard.html" class="back-btn">← Kembali</a>
+
+  <h2>Kelola Jadwal</h2>
+
+  <!-- FORM MANUAL -->
+  <div class="jadwal-form">
+    <input type="text" id="input-judul" placeholder="Judul kegiatan">
+    <input type="date" id="input-tanggal">
+    <button onclick="planetaSimpanJadwal()">Simpan</button>
+  </div>
+
+  <h3>Daftar Jadwal</h3>
+  <div id="daftar-jadwal"></div>
+
+  <h3>Kalender</h3>
+  <div id="calendar" style="margin-top:20px;"></div>
+
+</main>
+
+<script src="js/jadwal.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Statistik | Planeta</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <main class="content">
+
+    <a href="dashboard.html" class="back-btn">← Kembali</a>
+    <h2>Statistik Belajar</h2>
+
+    <!-- RINGKASAN -->
+    <div class="stat-grid">
+      <div class="stat-card">
+        <h3>Total Sesi</h3>
+        <p id="totalSesi">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Total Fokus</h3>
+        <p id="totalMenit">0 menit</p>
+      </div>
+    </div>
+
+    <!-- PER MATKUL -->
+    <div class="card">
+      <h3>Fokus per Mata Kuliah</h3>
+      <div id="statMatkul"></div>
+    </div>
+
+    <!-- RIWAYAT -->
+    <div class="card">
+      <h3>Riwayat Fokus</h3>
+      <ul id="riwayatFokus" class="riwayat"></ul>
+    </div>
+
+  </main>
+</div>
+
+<script src="js/statistik.js"></script>
+</body>
+</html>

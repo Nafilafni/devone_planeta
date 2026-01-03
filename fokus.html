@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Fokus Belajar | Planeta</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+  <main class="content">
+
+    <a href="dashboard.html" class="back-btn">← Kembali</a>
+    <h2>Mode Fokus Belajar</h2>
+
+    <div class="card fokus-card">
+      <p class="desc">
+        Gunakan mode fokus untuk meningkatkan konsentrasi belajar tanpa distraksi.
+      </p>
+
+      <select id="fokusMatkul">
+        <option value="">Pilih Mata Kuliah</option>
+        <option>Keamanan Web</option>
+        <option>DevOpsSec</option>
+        <option>Rekayasa Perangkat Lunak</option>
+        <option>Pemrograman Berorientasi Objek</option>
+        <option>Bahasa Inggris</option>
+        <option>Komputasi Paralel & Terdistribusi</option>
+        <option>Incident Response</option>
+        <option>Kewirausahaan</option>
+      </select>
+
+      <div class="timer" id="timer">25:00</div>
+
+      <div class="fokus-action">
+        <button class="btn primary" onclick="mulaiFokus()">Mulai</button>
+        <button class="btn ghost" onclick="pauseFokus()">Pause</button>
+        <button class="btn danger" onclick="resetFokus()">Reset</button>
+        <button class="btn danger" onclick="selesaiManual()">Selesai</button>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<script src="js/fokus.js"></script>
+</body>
+</html>

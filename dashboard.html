@@ -7,6 +7,7 @@
 </head>
 <body>
 
+
 <div class="dashboard">
 
   <!-- SIDEBAR -->
@@ -61,32 +62,49 @@
 
       <div class="card interactive">
         <div class="card-head">
-          <svg viewBox="0 0 24 24">
-            <rect x="3" y="4" width="18" height="18" rx="2"/>
-            <line x1="8" y1="2" x2="8" y2="6"/>
-            <line x1="16" y1="2" x2="16" y2="6"/>
-            <line x1="3" y1="10" x2="21" y2="10"/>
-          </svg>
           <h4>Jadwal</h4>
         </div>
-        <button>Tambah</button>
+        <!-- Ubah tombol jadi panggil fungsi toggle -->
+        <button onclick="location.href='jadwal.html'">Tambah</button>
       </div>
 
       <div class="card interactive">
         <div class="card-head">
-          <svg viewBox="0 0 24 24">
-            <path d="M3 3h18v18H3z"/>
-            <path d="M7 7h10M7 11h10M7 15h6"/>
-          </svg>
           <h4>Catatan</h4>
         </div>
-        <button>Buat</button>
+        <button onclick="location.href='catatan.html'">Buat</button>
+      </div>
+
+      <div class="card interactive">
+        <div class="card-head">
+          <h4>Fokus</h4>
+        </div>
+        <!-- Ubah tombol jadi panggil fungsi toggle -->
+        <button onclick="location.href='fokus.html'">Mulai</button>
+      </div>
+
+      <div class="card interactive">
+        <div class="card-head">
+          <h4>Statistik</h4>
+        </div>
+        <!-- Ubah tombol jadi panggil fungsi toggle -->
+        <button onclick="location.href='statistik.html'">Lihat</button>
       </div>
 
     </div>
+
+      <div>
+        <h4>Jadwal Saya</h4>
+        <div id="daftar-jadwal">
+          <p>Belum ada jadwal. Klik “Tambah” untuk mulai.</p>
+        </div>
+      </div>
+    </div>
+
   </main>
 
 </div>
+
 
 <script src="js/dashboard.js"></script>
 </body>

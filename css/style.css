@@ -1,10 +1,11 @@
-/* =====================
-   GLOBAL
-===================== */
+
 body{
   margin:0;
   font-family:Inter,sans-serif;
   background:#f4f6fb;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 .container{
@@ -30,7 +31,6 @@ body{
   backdrop-filter:blur(12px);
   border-bottom:1px solid rgba(0,0,0,0.05);
 }
-
 
 .nav-flex{
   display:flex;
@@ -164,13 +164,6 @@ body{
 /* =====================
    CARD / VALUE
 ===================== */
-.card{
-  background:white;
-  padding:32px;
-  border-radius:20px;
-  text-align:center;
-  transition:.35s ease;
-}
 
 .card svg{
   width:36px;
@@ -184,12 +177,12 @@ body{
 .card h4{
   margin:10px 0 6px;
   font-size:18px;
-  color:#020617;
+  color:#f5f6fc;
 }
 
 .card p{
   font-size:14px;
-  color:#64748b;
+  color:#e7ebf1;
 }
 
 .card:hover{
@@ -231,9 +224,7 @@ body{
   transition:.3s;
 }
 
-.menu-list li:hover{
-  background:#1e293b;
-}
+
 
 .menu-list svg{
   width:18px;
@@ -261,7 +252,7 @@ body{
 
 .back-btn:hover{
   background:#38bdf8;
-  color:#020617;
+  color:#a1a8c8;
   transform:translateX(-5px);
 }
 
@@ -279,11 +270,12 @@ body{
 }
 
 .card-head svg{
-  width:24px;
-  height:24px;
+  width:22px;
+  height:22px;
   stroke:#38bdf8;
   stroke-width:2;
   fill:none;
+  filter: drop-shadow(0 0 6px rgba(56,189,248,0.6));
 }
 
 .card button{
@@ -324,7 +316,7 @@ footer{
 /* === LOGO PLANETA FIX === */
 .logo{
   font-size:24px;
-  font-weight:800;
+  font-weight:600;
   letter-spacing:-0.6px;
   color:#020617;
   display:flex;
@@ -368,4 +360,617 @@ footer{
   color:#0f172a;
   margin-bottom:32px;
 }
+/* planeta-dashboard.css */
 
+.jadwal-form {
+  display: none;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+
+.form-row input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.btn-simpan {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-simpan:hover {
+  background: #3a56d4;
+}
+
+.jadwal-item {
+  background: white;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  border-left: 3px solid #4361ee;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.jadwal-item h5 {
+  margin: 0 0 0.25rem;
+  color:#cbd5f5
+}
+
+#calendar {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  margin-top: 32px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family:sans-serif
+  
+}
+
+.page-title {
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.card {
+  background:white;
+  padding:32px;
+  border-radius:20px;
+  text-align:center;
+  transition:.35s ease;
+}
+
+.card h4{
+  margin:10px 0 6px;
+  font-size:18px;
+  color:#020617;
+}
+
+.card p{
+  font-size:14px;
+  color:#64748b;
+}
+/* ===== FullCalendar ===== */
+
+.fc {
+  background: #020617;
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.fc-toolbar-title {
+  font-size: 20px !important;
+  font-weight: 600;
+}
+
+.fc-button {
+  background: #1e293b !important;
+  border: none !important;
+  border-radius: 8px !important;
+}
+
+.fc-button:hover {
+  background: #334155 !important;
+}
+
+.fc-daygrid-day {
+  border: 1px solid #1e293b;
+}
+
+.fc-day-today {
+  background: rgba(56,189,248,0.15) !important;
+}
+
+.fc-event {
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  border: none;
+  border-radius: 8px;
+  padding: 2px 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.hint {
+  margin-top: 15px;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+/* ===== FIX FULLCALENDAR DARK MODE ===== */
+
+#calendar {
+  background: #020617;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+
+/* nama hari (Sun, Mon, dst) */
+.fc-col-header-cell-cushion {
+  color: #cbd5f5 !important;
+  font-weight: 600;
+}
+
+/* angka tanggal */
+.fc-daygrid-day-number {
+  color: #e5e7eb !important;
+}
+
+/* border kalender */
+.fc-theme-standard td,
+.fc-theme-standard th {
+border: 1px solid #1e293b !important;
+}
+
+/* hari ini */
+.fc-day-today {
+  background: rgba(99,102,241,0.15) !important;
+}
+
+/* event */
+.fc-event {
+  background: linear-gradient(135deg, #6366f1, #22d3ee) !important;
+  border: none !important;
+  color: #020617 !important;
+  border-radius: 8px;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+/* ===== LIST JADWAL – FIX KONTRAS ===== */
+
+#daftar-jadwal .jadwal-item {
+  background: linear-gradient(135deg, #020617, #020617ee);
+  border: 1px solid rgba(99,102,241,0.4);
+  border-left: 5px solid #6366f1;
+  border-radius: 16px;
+  padding: 16px 18px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* JUDUL */
+#daftar-jadwal .jadwal-item strong {
+  color: #f8fafc;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* TANGGAL */
+#daftar-jadwal .jadwal-item small {
+  color: #a5b4fc;
+  font-size: 12px;
+}
+
+/* TOMBOL */
+#daftar-jadwal .jadwal-item button {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#daftar-jadwal .jadwal-item button:hover {
+  background: #dc2626;
+}
+
+/* =====================
+   CONTACT US (FORM ONLY)
+===================== */
+
+.contact-section {
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #0f172a, #020617);
+}
+
+.contact-wrapper.single {
+  max-width: 700px;
+  margin: auto;
+}
+
+.contact-form {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 50px 40px;
+  box-shadow: 0 30px 70px rgba(0,0,0,.45);
+  text-align: center;
+}
+
+.contact-form h2 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  color: #020617;
+}
+
+.contact-desc {
+  font-size: 15px;
+  color: #64748b;
+  margin-bottom: 32px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  margin-bottom: 16px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 130px;
+}
+
+.contact-form button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.contact-form button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(56,189,248,.6);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 40px 24px;
+  }
+
+  .contact-form h2 {
+    font-size: 28px;
+  }
+}
+
+
+/* ===== TEAM PAGE ===== */
+
+.team-section {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.team-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #020617;
+}
+
+.team-subtitle {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #64748b;
+}
+
+.team-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.team-card {
+  background: white;
+  padding: 32px 26px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: .3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+}
+
+.team-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 16px;
+}
+
+.team-card h3 {
+  margin: 10px 0 4px;
+  color: #020617;
+}
+
+.team-card span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #38bdf8;
+}
+
+.team-card p {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ===== CATATAN ===== */
+
+.catatan-form select,
+.catatan-form input,
+.catatan-form textarea {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.catatan-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.matkul-group {
+  margin-top: 40px;
+}
+
+.matkul-group h3 {
+  color: #38bdf8;
+  margin-bottom: 12px;
+}
+
+.catatan-item {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-left: 5px solid #6366f1;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.catatan-item h4 {
+  margin: 0;
+  color: #fff;
+}
+
+.catatan-item p {
+  margin: 6px 0;
+  color: #cbd5f5;
+}
+
+.preview-img {
+  max-width: 200px;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+/* ======================
+   HALAMAN CATATAN
+====================== */
+
+.single-page {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* FORM */
+.catatan-form {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,.08);
+  margin-bottom: 50px;
+}
+
+.catatan-form h3 {
+  margin-bottom: 20px;
+  color: #020617;
+}
+
+.catatan-form select,
+.catatan-form input,
+.catatan-form textarea {
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #cbd5f5;
+  font-size: 14px;
+}
+
+.catatan-form textarea {
+  min-height: 120px;
+}
+
+/* ======================
+   GROUP MATA KULIAH
+====================== */
+
+.matkul-group {
+  margin-bottom: 40px;
+}
+
+.matkul-group h3 {
+  color: #020617; /* ❌ bukan biru */
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+/* ======================
+   ITEM CATATAN
+====================== */
+
+.catatan-item {
+  background: #020617;
+  color: white;
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin-bottom: 14px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.catatan-item h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.catatan-item p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+/* ======================
+   BUTTON
+====================== */
+
+.btn.success {
+  background: linear-gradient(135deg,#38bdf8,#0ea5e9);
+  color: #020617;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 22px;
+  font-weight: 600;
+}
+
+.btn.danger {
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 13px;
+}
+
+.btn.danger:hover {
+  background: #dc2626;
+}
+
+/* PDF BUTTON */
+.btn.ghost {
+  border: 2px solid #38bdf8;
+  background: transparent;
+  color: #38bdf8;
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-size: 12px;
+}
+
+.fokus-card {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+
+.timer {
+  font-size: 64px;
+  font-weight: 700;
+  margin: 30px 0;
+  letter-spacing: 3px;
+}
+
+.fokus-action {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.desc {
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg,#0f172a,#020617);
+  color: #e5e7eb;
+  padding: 24px;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.stat-card p {
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #1e293b;
+}
+
+.riwayat li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #334155;
+  color: #cbd5f5;
+}
+
+/* =========================
+   FIX FULLCALENDAR HEADER
+========================= */
+
+/* Judul bulan (January 2026, dst) */
+.fc-toolbar-title {
+  color: #e5e7eb !important;
+  font-weight: 600;
+}
+
+
+/* Nama hari (Mon, Tue, ...) */
+.fc-col-header-cell-cushion {
+  color: #cbd5f5 !important;
+  font-weight: 600;
+}
