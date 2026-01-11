@@ -39,11 +39,7 @@ jobs:
 
             APP_DIR="/var/www/devone_planeta"
             APP_NAME="devone_planeta"
-            
-            # --- PERBAIKAN DI SINI ---
-            PORT=8080  
-            # Kita pakai 8080 karena port 80 sudah dipakai Nginx VPS
-            # -------------------------
+            PORT=8080
 
             cd $APP_DIR
 
@@ -55,15 +51,8 @@ jobs:
             docker rm $APP_NAME 2>/dev/null || true
 
             echo "▶️ Running new container..."
-            docker run -d \
-              --name $APP_NAME \
-              --restart unless-stopped \
-              -p $PORT:80 \ 
-              $APP_NAME
-            
-            # Penjelasan: -p 8080:80
-            # Angka kiri (8080) = Port di VPS (dibuka untuk Nginx Proxy)
-            # Angka kanan (80)  = Port asli di dalam Container (nginx alpine bawaan listen di 80)
+            # SAYA UBAH KE SATU BARIS SUPAYA TIDAK ERROR SPASI LAGI:
+            docker run -d --name $APP_NAME --restart unless-stopped -p $PORT:80 $APP_NAME
 
             echo "🗑️ Pruning unused images..."
             docker image prune -f
