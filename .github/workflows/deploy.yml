@@ -10,45 +10,60 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # 1. Ambil kode dari GitHub ke Runner (Mesin sementara GitHub)
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy to VPS via SSH
+      # 2. Copy file dari Runner ke VPS kamu (Gak perlu git clone di VPS)
+      - name: Copy files to VPS via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_KEY }}  # Pastikan nama secret ini sesuai
+          port: 22
+          source: "."
+          target: "/var/www/devone_planeta"
+
+      # 3. Masuk ke VPS via SSH untuk Build & Run Docker
+      - name: Deploy & Restart Docker via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
           username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
+          key: ${{ secrets.VPS_KEY }} # Pastikan nama secret ini sesuai
           port: 22
           script: |
             set -e
-            echo "🚀 Deploy started..."
+            echo "🚀 Deploy process started..."
 
-            APP_DIR=/var/www/devone_planeta
-            APP_NAME=devone_planeta
-            PORT=8080
+            APP_DIR="/var/www/devone_planeta"
+            APP_NAME="devone_planeta"
+            PORT=80  # Ganti ke 80 biar bisa diakses tanpa ketik port
 
-            mkdir -p $APP_DIR
             cd $APP_DIR
 
-            echo "🧹 Cleaning old source..."
-            rm -rf ./* .git || true
+            # Tidak perlu git clone lagi, karena file sudah dikirim di step sebelumnya
 
-            echo "📥 Cloning repository..."
-            git clone https://github.com/Nafilafni/devone_planeta.git .
+            echo "🐳 Building new docker image..."
+            # Build image baru dari file yang baru dikirim
+            docker build -t $APP_NAME .
 
-            echo "🛑 Stopping old container..."
+            echo "🛑 Stopping and removing old container..."
+            # Matikan container lama kalau ada
             docker stop $APP_NAME 2>/dev/null || true
             docker rm $APP_NAME 2>/dev/null || true
 
-            echo "🐳 Building docker image..."
-            docker build -t $APP_NAME .
-
-            echo "▶️ Running container..."
+            echo "▶️ Running new container..."
+            # Jalankan container baru
             docker run -d \
               --name $APP_NAME \
               --restart unless-stopped \
               -p $PORT:80 \
               $APP_NAME
 
-            echo "✅ Deploy SUCCESS!"
+            echo "🗑️ Pruning unused images..."
+            # Bersihkan image bekas supaya storage VPS gak penuh
+            docker image prune -f
+
+            echo "✅ Deploy SUCCESS! Updated to latest changes."
