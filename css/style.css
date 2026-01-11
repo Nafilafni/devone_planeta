@@ -86,6 +86,20 @@ body{
   box-shadow:0 8px 22px rgba(56,189,248,0.45);
 }
 
+/* CTA BUTTON (Buka Dashboard) */
+.cta-btn{
+  font-size:18px;
+  padding:16px 40px;
+  border-radius:18px;
+  border:2px solid #020617;
+  box-shadow:0 16px 35px rgba(2,6,23,.25);
+}
+
+.cta-btn:hover{
+  transform:translateY(-5px) scale(1.05);
+  border-color:#ffffff;
+}
+
 .btn.ghost{
   border:2px solid #38bdf8;
   background:transparent;
@@ -209,6 +223,17 @@ body{
   padding:2rem;
 }
 
+/* === SEJAJARKAN JUDUL DASHBOARD DENGAN MENU === */
+.sidebar h3.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 10px;   /* SAMA dengan menu-list li */
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .menu-list{
   list-style:none;
   padding:0;
@@ -325,12 +350,17 @@ footer{
 }
 
 .cta-section{
-  margin-top:140px;
+  margin-top:120px;
+  min-height:60vh;               /* ⬅️ anti kontrak */
   padding:120px 20px;
   background:linear-gradient(135deg,#38bdf8,#0ea5e9);
   text-align:center;
   position:relative;
   overflow:hidden;
+
+  display:flex;                  /* ⬅️ center vertical */
+  align-items:center;
+  justify-content:center;
 }
 
 .cta-section::before{
@@ -344,21 +374,21 @@ footer{
 
 .cta-inner{
   position:relative;
-  max-width:700px;
-  margin:auto;
+  max-width:720px;
+  width:100%;
 }
 
 .cta-section h2{
-  font-size:42px;
-  font-weight:700;
+  font-size:44px;
+  font-weight:800;
   color:#020617;
-  margin-bottom:16px;
+  margin-bottom:18px;
 }
 
 .cta-section p{
   font-size:18px;
   color:#0f172a;
-  margin-bottom:32px;
+  margin-bottom:36px;
 }
 /* planeta-dashboard.css */
 
@@ -417,12 +447,11 @@ footer{
   margin-top: 32px;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 * {
   box-sizing: border-box;
-  font-family:sans-serif
-  
+  font-family: 'Inter', sans-serif;
 }
 
 .page-title {
@@ -973,4 +1002,206 @@ border: 1px solid #1e293b !important;
 .fc-col-header-cell-cushion {
   color: #cbd5f5 !important;
   font-weight: 600;
+}
+
+@media (max-width: 768px){
+
+  .cta-section{
+    min-height:70vh;
+    padding:100px 16px;
+  }
+
+  .cta-section h2{
+    font-size:30px;
+  }
+
+  .cta-section p{
+    font-size:15px;
+  }
+
+  .cta-btn{
+    width:100%;
+    justify-content:center;
+    font-size:16px;
+    padding:16px 0;
+  }
+}
+
+/* =========================
+   RESPONSIVE GLOBAL
+========================= */
+
+/* ===== LAPTOP KECIL ===== */
+@media (max-width: 1200px) {
+  .container {
+    width: 92%;
+  }
+
+  .hero-modern {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-btn {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 992px) {
+
+  /* NAVBAR */
+  .menu a {
+    margin-left: 18px;
+    font-size: 14px;
+  }
+
+  /* HERO */
+  .hero-text h1 {
+    font-size: 42px;
+  }
+
+  /* DASHBOARD */
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .menu-list {
+    display: flex;
+    gap: 12px;
+  }
+
+  .menu-list li {
+    white-space: nowrap;
+  }
+
+  .content {
+    padding: 2rem 1.5rem;
+  }
+
+  /* TEAM */
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  /* NAVBAR */
+  .nav-flex {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu a {
+    margin: 6px 10px;
+  }
+
+  /* HERO */
+  .hero-modern {
+    padding: 40px 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
+
+  .hero-text p {
+    font-size: 15px;
+  }
+
+  /* BUTTON */
+  .btn,
+  .cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* CARD */
+  .card {
+    padding: 24px;
+  }
+
+  /* TEAM */
+  .team-title {
+    font-size: 28px;
+  }
+
+  .team-card img {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* CONTACT */
+  .contact-form {
+    padding: 36px 24px;
+  }
+
+  .contact-form h2 {
+    font-size: 26px;
+  }
+
+  /* CALENDAR */
+  #calendar {
+    padding: 10px;
+  }
+}
+
+/* ===== MOBILE SMALL ===== */
+@media (max-width: 480px) {
+
+  .hero-text h1 {
+    font-size: 26px;
+  }
+
+  .cta-section h2 {
+    font-size: 24px;
+  }
+
+  .cta-section p {
+    font-size: 14px;
+  }
+
+  .team-card {
+    padding: 24px 18px;
+  }
+
+  .timer {
+    font-size: 48px;
+  }
+}
+
+/* === FIX SEJAJAR MENU DASHBOARD (MODE HP SAJA) === */
+@media (max-width: 768px){
+  .sidebar{
+    align-items: center;
+  }
+
+  .sidebar .brand{
+    display: flex;
+    align-items: center;
+    height: 44px;          /* samakan tinggi menu */
+    padding: 0 12px;
+    margin: 0;
+    line-height: 1;
+  }
 }
