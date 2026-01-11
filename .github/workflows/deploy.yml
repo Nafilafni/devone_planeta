@@ -59,7 +59,7 @@ jobs:
             docker run -d \
               --name $APP_NAME \
               --restart unless-stopped \
-              -p $PORT:80 \
+              -p $PORT:8080 \
               $APP_NAME
 
             echo "🗑️ Pruning unused images..."
